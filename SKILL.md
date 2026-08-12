@@ -22,6 +22,32 @@ Do not skip to screens before the earlier phases are done. Every phase here exis
 
 Keep them in sync. When a decision changes (see "Reopening decisions" below), update all of them immediately, don't let one drift stale.
 
+### The tool split
+
+**Everything that is thinking lives in FigJam. Only screens live in Figma.**
+
+FigJam holds the foundations, the problems, HMWs, personas, metrics, solution concepts, references, the PRD, and the user flow. Figma Design holds the hi-fi screens and nothing else, plus a small component kit file if you need one (see Phase 9). Figma Slides holds the deck.
+
+The reason is that the board is the process artifact. Someone should be able to open one file and see the entire chain of reasoning without hunting across tools, and the design file should stay clean enough that "here are the screens" means exactly that.
+
+### Naming
+
+Name things twice, not once, because you need a filename long before you know what the product is.
+
+1. **Working name, at Phase 1.** Deliberately boring and descriptive, domain plus function ("Multi Asset Position Monitor"). Nobody gets attached to it, which is the point. Use it in every filename immediately so nothing is ever left as "Untitled".
+2. **Real product name, right after Phase 9.** The PRD is the first point where you actually know who uses this, what job it does, and what's out of scope, so before that you'd be naming a hypothesis. Do it *before* Phase 11, because the name appears in headers, empty states, and exports, and retrofitting it into finished screens is pure rework. Record the rename as a superseded decision like any other, then do it in one pass across every file.
+
+File naming uses numbered prefixes so files and pages sort in process order rather than alphabetically, and the deck is named for its audience rather than generically:
+
+| Artifact | Name |
+|---|---|
+| FigJam | `<Product> 01 Discovery` |
+| Figma Design | `<Product> 02 Screens` |
+| Figma Slides | `<Product> 03 Stakeholder Deck`, or `03 Case Study` when the audience is a grader |
+| Living doc | `<product>.md`, kebab-case |
+
+Same logic inside each file. FigJam sections run `01 Problems`, `02 HMW`, `03 Personas`, `04 Metrics`, `05 Solution Concepts`, `06 References`, `07 PRD`, `08 User Flow`. Figma pages run `01 Screens`, `02 Exports`.
+
 ## Phase 0: Understand the brief, in the user's terms
 
 Read the brief fully before asking anything. If the user says they're not from the domain the brief is about (finance, healthcare, logistics, whatever), do not assume they know the jargon. Explain domain terms with plain analogies before using them in later discussion, and check they're following before moving on. A user who doesn't feel lost is a user who can actually validate your decisions instead of rubber-stamping them.
@@ -157,9 +183,11 @@ The line to hold: a required sequence is a *what*, so it belongs here. Branches,
 
 This doesn't change how the PRD is organized. Feature areas stay grouped by function so a shared mechanism stays a single entry. Journeys reference requirement IDs in order, so one requirement can appear in several journeys without being duplicated anywhere.
 
-### PRD pages in Figma
+### PRD pages in FigJam
 
-Build the PRD as pages in Figma, not only as markdown, since it's a document stakeholders read alongside the board. Page frame is **680 × 992 maximum, with 42 padding on all four sides**, giving a 596-wide content column. Make the requirement block a real component with dynamic properties (ID, priority, statement, traces, acceptance, dropped) rather than copy-pasted text layers, so a change to the format propagates instead of being re-done per requirement. Priority label uses the same color mapping as the FigJam HMW badges, with the same legend.
+The PRD belongs in FigJam with the rest of the thinking, not in the Figma design file (see the tool split above). Build it as document pages in a dedicated board section, not only as markdown, since stakeholders read it alongside the board. Page frame is **680 × 992 maximum, with 42 padding on all four sides**, giving a 596-wide content column.
+
+Make the requirement block a real component with dynamic properties (ID, priority, statement, traces, acceptance, dropped) rather than copy-pasted text layers, so a format change propagates instead of being redone per requirement. FigJam can't create components, only Figma Design can, so author the block once in a small kit file, publish it as a library, and consume it in FigJam where you can switch its variants. If per-instance text overrides turn out to be awkward in FigJam, fall back to one master template group you duplicate, and keep it as the single source of truth so the format still only changes in one place. Priority label uses the same color mapping as the HMW badges, with the same legend.
 
 ## Phase 10: Only now, user flow
 
@@ -205,7 +233,8 @@ Build the board incrementally, matching the phases above, not all at once at the
 - **Personas**: goals as text, pain points as individual stickies (same reasoning as HMW, they're atomic items that may get referenced or grouped later).
 - **Success Metrics**: primary metrics visually distinguished (e.g. an accent bar or badge) from supporting metrics, matching the curation from Phase 8.
 - **Solution Concepts**: an affinity diagram, grouped by function (per Phase 6), stickies under category headers. Competing candidates for the same HMW sit side by side here, they don't get resolved until the PRD.
-- **PRD**: not a FigJam section. It lives as Figma document pages (680 × 992 max, 42 padding all sides, per Phase 9) plus the markdown living doc. Link the board section to the PRD file rather than duplicating requirements as stickies.
+- **PRD**: document pages, 680 × 992 max with 42 padding all sides (per Phase 9), requirement blocks as library component instances rather than loose text. Not stickies, it's a specification, not discussion input.
+- **User Flow**: the expanded flow from Phase 10, built off the PRD's key journeys, with branches and error paths drawn rather than described.
 - **UI Pattern References**: real screenshots (uploaded via the platform's asset upload, not invented mockups), grouped by pattern, each with a one-line caption naming the app and what it does. If webp screenshots fail to render as fills after upload, convert to PNG first, it's a more broadly-supported format for this purpose.
 
 Always re-screenshot a section after editing it to verify it actually rendered as intended before moving on, don't assume the write succeeded just because the tool call returned success.

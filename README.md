@@ -19,12 +19,12 @@ When triggered, Claude will work through a design brief in phases instead of jum
 7. Converge HMWs into concrete Solution Concepts, keeping more than one candidate per HMW
 8. Ground interaction/pattern decisions in real references (Mobbin, Lazyweb, WebSearch), not memory
 9. Curate success metrics to a few primary ones instead of an unfocused list
-10. Turn the solution concepts into a PRD, so requirements are written, prioritized, traced, and testable before any screen work starts
-11. Only then design the user flow
+10. Turn the solution concepts into a PRD, so requirements are written, prioritized, traced, and testable before any screen work starts, including the key journeys that fix what order things happen in
+11. Only then design the user flow, expanding those journeys into branches, error paths, and default states
 12. Build the hi-fi screens, then audit whether the terminology and units actually read like the real domain instead of a retail default
 13. Produce the final deliverable (a stakeholder deck or a case-study submission), cohesive with the product's own design language and traceable back to every requirement or validated decision
 
-It also describes how to keep a living markdown decision document and a parallel FigJam board in sync throughout, and how to handle reopening a decision when new information (or a stakeholder) invalidates something already "resolved."
+It also sets a strict tool split (everything that is thinking lives in FigJam, only screens live in Figma), a two-stage naming convention (a boring working name at the start, the real product name once the PRD exists), and describes how to keep a living markdown decision document and a parallel FigJam board in sync throughout, and how to handle reopening a decision when new information (or a stakeholder) invalidates something already "resolved."
 
 ## Install
 
