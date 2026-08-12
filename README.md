@@ -16,12 +16,13 @@ When triggered, Claude will work through a design brief in phases instead of jum
 4. Frame the problem, then generate How Might We (HMW) statements
 5. Build personas grounded in the brief, then validate every HMW against every pain point to catch gaps
 6. Prioritize (P0-P3) so a limited slide/page budget goes to what matters most
-7. Converge HMWs into concrete Solution Concepts before touching flow
+7. Converge HMWs into concrete Solution Concepts, keeping more than one candidate per HMW
 8. Ground interaction/pattern decisions in real references (Mobbin, Lazyweb, WebSearch), not memory
 9. Curate success metrics to a few primary ones instead of an unfocused list
-10. Only then design the user flow
-11. Build the hi-fi screens, then audit whether the terminology and units actually read like the real domain instead of a retail default
-12. Produce the final deliverable (a stakeholder deck or a case-study submission), cohesive with the product's own design language and traceable back to every requirement or validated decision
+10. Turn the solution concepts into a PRD, so requirements are written, prioritized, traced, and testable before any screen work starts
+11. Only then design the user flow
+12. Build the hi-fi screens, then audit whether the terminology and units actually read like the real domain instead of a retail default
+13. Produce the final deliverable (a stakeholder deck or a case-study submission), cohesive with the product's own design language and traceable back to every requirement or validated decision
 
 It also describes how to keep a living markdown decision document and a parallel FigJam board in sync throughout, and how to handle reopening a decision when new information (or a stakeholder) invalidates something already "resolved."
 

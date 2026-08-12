@@ -1,6 +1,6 @@
 ---
 name: blueprint-design
-description: Use whenever the user is designing a product or feature from zero and needs a systematic way to generate hypotheses, converge them into concrete prototypes, and validate which ones the business actually needs, not only for a case study or take-home assignment (though those still trigger it too, as a compressed instance of the same process). Trigger this any time the user shares a design brief, a case study document, a take-home design test, or asks to work through personas, HMW (How Might We) statements, problem framing, prioritization (P0-P3), success metrics, or a design decision log, even if they don't explicitly ask for a "process" or "methodology." Also use when the user wants to keep a living decision document alongside a FigJam board while designing, wants HMWs or pain points validated for gaps before moving to user flow, wants to generate multiple solution hypotheses before committing to one, needs to prep decisions or prototypes for a real stakeholder discussion and validation, or is deciding on UI interaction patterns and should ground the decision in real references (Mobbin, Lazyweb, WebSearch) instead of guessing from memory. Push toward this skill even for what looks like "just a quick brainstorm" on a design brief, since good product design is judged on process rigor and validated reasoning, not just final screens. Keep using it through hi-fi execution and the final presentation or stakeholder deck: auditing whether the UI's terminology reads like the real domain (institutional vs retail), reversing decisions that no longer serve the core job, and producing a cohesive, non-AI-slop deliverable that traces every slide back to a requirement or a validated decision.
+description: Use whenever the user is designing a product or feature from zero and needs a systematic way to generate hypotheses, converge them into concrete prototypes, and validate which ones the business actually needs, not only for a case study or take-home assignment (though those still trigger it too, as a compressed instance of the same process). Trigger this any time the user shares a design brief, a case study document, a take-home design test, or asks to work through personas, HMW (How Might We) statements, problem framing, prioritization (P0-P3), success metrics, a PRD or product requirements document, functional and non-functional requirements, acceptance criteria, or a design decision log, even if they don't explicitly ask for a "process" or "methodology." Also use when the user wants to keep a living decision document alongside a FigJam board while designing, wants HMWs or pain points validated for gaps before moving to user flow, wants to generate multiple solution hypotheses before committing to one, wants solution concepts turned into written requirements before any screen work starts, needs to prep decisions or prototypes for a real stakeholder discussion and validation, or is deciding on UI interaction patterns and should ground the decision in real references (Mobbin, Lazyweb, WebSearch) instead of guessing from memory. Push toward this skill even for what looks like "just a quick brainstorm" on a design brief, since good product design is judged on process rigor and validated reasoning, not just final screens. Keep using it through hi-fi execution and the final presentation or stakeholder deck: auditing whether the UI's terminology reads like the real domain (institutional vs retail), reversing decisions that no longer serve the core job, and producing a cohesive, non-AI-slop deliverable that traces every slide back to a requirement or a validated decision.
 ---
 
 # Blueprint Design
@@ -9,16 +9,18 @@ A step-by-step method for designing a product from zero: generate hypotheses, co
 
 The core idea: **good product design is judged on the visible thinking, not just the final screens, whether the judge is a stakeholder deciding what to fund or a grader scoring an assignment.** Every phase below produces something that decision-maker can see evidence of: a documented assumption, a traceable HMW, a real reference, a resolved-with-reasoning decision, a hypothesis that survived (or didn't survive) scrutiny.
 
-A blueprint isn't the building. It's what makes the building sound enough to actually construct. This method covers the reasoning and documentation work (assumptions, research, HMW, personas, prioritization, solution concepts, references, flow) that generates and narrows down hypotheses before committing real design or engineering effort to one, but it exists to produce a solid foundation for the real design work that follows: the actual hi-fi screens and the deliverable used to align stakeholders (or satisfy a grading rubric). Don't treat Phase 9 (user flow) as the finish line. The blueprint feeds two more phases that matter just as much: Phase 10 (hi-fi execution, then a domain-authenticity audit) and Phase 11 (the deliverable, whether that's a stakeholder deck or a case-study submission). Carry the same traceability all the way through, every screen and every slide should still be answerable with "because of X assumption / Y reference / Z priority / this is what stakeholders validated," not just "it looked right."
+A blueprint isn't the building. It's what makes the building sound enough to actually construct. This method covers the reasoning and documentation work (assumptions, research, HMW, personas, prioritization, solution concepts, references, flow) that generates and narrows down hypotheses before committing real design or engineering effort to one, but it exists to produce a solid foundation for the real design work that follows: the actual hi-fi screens and the deliverable used to align stakeholders (or satisfy a grading rubric). Don't treat Phase 9 (the PRD) or Phase 10 (user flow) as the finish line. The blueprint feeds two more phases that matter just as much: Phase 11 (hi-fi execution, then a domain-authenticity audit) and Phase 12 (the deliverable, whether that's a stakeholder deck or a case-study submission). Carry the same traceability all the way through, every screen and every slide should still be answerable with "because of X assumption / Y reference / Z priority / this is what stakeholders validated," not just "it looked right."
 
 Do not skip to screens before the earlier phases are done. Every phase here exists because skipping it caused a real problem in practice (see the "why" under each one).
 
-## The two artifacts you maintain in parallel
+## The artifacts you maintain in parallel
 
 1. **A living markdown decision document** (e.g. `<project-name>.md` in the working directory). Update it immediately after every decision, not in a batch at the end. It should read as a chronological record of what was decided, why, and what's still open, not a polished summary. If the user later says "wait, are we sure about X," this file is what lets you answer without re-deriving everything.
 2. **A FigJam board** that visually documents the same decisions, built up section by section as the process below progresses. Business stakeholders (and case study graders) respond to seeing structured visual thinking, not just a wall of text.
 
-Keep both in sync. When a decision changes (see "Reopening decisions" below), update both immediately, don't let one drift stale.
+3. **The PRD** (Phase 9), which arrives later than the other two but then becomes the reference the screens are built and audited against. The living doc records why a decision was made, the PRD records what must therefore be true of the product.
+
+Keep them in sync. When a decision changes (see "Reopening decisions" below), update all of them immediately, don't let one drift stale.
 
 ## Phase 0: Understand the brief, in the user's terms
 
@@ -66,11 +68,13 @@ Case studies almost always have a slide/page/time budget that can't cover everyt
 
 Write down the reasoning per item, not just the label. When you later decide what makes it into the final deliverable, P0+P1 drives the core content, P2 becomes secondary detail, P3 gets a one-line mention at most.
 
-## Phase 6: Converge HMWs into concrete Solution Concepts before touching flow
+## Phase 6: Converge HMWs into concrete Solution Concepts before the PRD
 
 This is the step that's easiest to skip and most costly to skip. HMWs are questions. Success metrics are how you'd measure. Neither is an answer. Before building a user flow, explicitly answer each P0/P1 HMW with one concrete mechanism, then group the answers by function (not by which HMW they came from) into a solution affinity map.
 
 Watch for one mechanism answering multiple HMWs (e.g. one "expandable detail" component satisfying three different trust-building questions at once). That's worth calling out explicitly in the deliverable. It reads as an efficient, deliberate design decision rather than three unrelated features.
+
+Generate more than one candidate mechanism per HMW where the space allows it. Don't narrow here, the narrowing happens in Phase 9 where writing the requirement forces the choice and records the rejects. This phase's job is to have options worth choosing between.
 
 ## Phase 7: Ground interaction/pattern decisions in real references, not memory
 
@@ -82,20 +86,72 @@ If the platform assumption from Phase 2 turns out to be wrong or incomplete part
 
 Brainstorm success metrics freely first, tracing each one back to a numbered problem. Then apply a curation pass: pick 3-5 primary metrics to headline (these carry the story in the deliverable), and keep the rest as supporting/reference detail. A long list of equally-weighted metrics reads as unfocused to a stakeholder audience. Use a named framework if it helps justify the cut (North Star Metric, HEART) rather than just asserting "these are the important ones."
 
-## Phase 9: Only now, user flow
+## Phase 9: Turn the solution concepts into a PRD before any screen work
 
-With solution concepts, references, and priorities in hand, sequence them into an actual flow. This is the point where per-item interaction questions (default sort order, what updates when a filter changes, what's visible at each information density layer) get resolved, because by now you have real constraints to reason from instead of guessing in a vacuum.
+HMWs investigate. Solution concepts diverge into several candidate ideas. Neither is a requirement. A requirement is the missing middle: not a question, not a measure, not yet a UI decision, but a statement of what must be true of the thing you're about to design. Write it down before designing, or the screens become the only record of what was decided and nobody can audit them later.
 
-## Phase 10: Hi-fi execution, then a domain-authenticity audit
+Scope the PRD by inherited priority. Every requirement carries the P-label of the HMW it came from, and P0/P1 get full treatment while P2/P3 get listed as deferred. When two candidate mechanisms collide, the one serving the higher-priority HMW wins, and the loser is recorded rather than deleted.
+
+### Structure
+
+Follow standard PRD convention (purpose, scope, functional and non-functional requirements split apart, acceptance criteria, metrics) rather than inventing a format, but keep it design-led, not an engineering spec. Nine sections:
+
+1. **Cover and revision history.** Title, version, date, author. The history matters here because of "Reopening decisions" below, a superseded requirement should be visible as superseded.
+2. **Purpose, in scope, out of scope.** The out-of-scope list does real work. It's where scope discipline gets written down instead of re-argued.
+3. **Assumptions.** Reference the Phase 1 numbers, don't restate them ("per assumption #4").
+4. **Users.** One line and one primary pain point per persona. Not the full Phase 4 persona.
+5. **Feature areas.** The body. Sections come from the Phase 6 affinity map, so they're grouped by function, which is what keeps a shared mechanism as a single entry instead of three drifting copies.
+6. **Non-functional requirements.** Refresh rates, performance, platform, accessibility. Split these out so they don't get buried inside a feature paragraph.
+7. **Success metrics.** The 3-5 primary ones from Phase 8 only.
+8. **Deferred.** The P2 and P3 items, with their labels.
+9. **Open questions.**
+
+### The requirement block
+
+Every functional requirement is one block, and it covers one thing only, has one possible interpretation, and is testable:
+
+```
+FR-POS-01                                    [P0]
+The operator must be able to see unrealized
+exposure per asset class without leaving the
+position list.
+
+Traces to:  HMW-03, HMW-07  ·  Problem #2
+Acceptance: Given a portfolio with 3 asset
+  classes, when the operator opens the
+  position list, then exposure per class is
+  visible without scrolling or navigation.
+Considered and dropped: separate exposure tab
+  (adds a navigation step to a monitoring job)
+```
+
+Four things that earns you:
+
+1. **Priority inherited**, so the build order and the scope cut line are readable without reorganizing anything.
+2. **Two-way traceability**, so the Phase 11 audit question "why is this field here" becomes a lookup instead of an argument.
+3. **Given/When/Then acceptance criteria**, which is what separates a requirement from a wish. If you can't write the criteria, the requirement isn't specific enough yet.
+4. **Considered and dropped**, so the divergent work from Phase 6 stays visible after you pick a winner instead of evaporating.
+
+State what the product must do, never how it's built. One mechanism answering three HMWs appears once with three trace links.
+
+### PRD pages in Figma
+
+Build the PRD as pages in Figma, not only as markdown, since it's a document stakeholders read alongside the board. Page frame is **680 × 992 maximum, with 42 padding on all four sides**, giving a 596-wide content column. Make the requirement block a real component with dynamic properties (ID, priority, statement, traces, acceptance, dropped) rather than copy-pasted text layers, so a change to the format propagates instead of being re-done per requirement. Priority label uses the same color mapping as the FigJam HMW badges, with the same legend.
+
+## Phase 10: Only now, user flow
+
+With the PRD, references, and priorities in hand, sequence the requirements into an actual flow. This is the point where per-item interaction questions (default sort order, what updates when a filter changes, what's visible at each information density layer) get resolved, because by now you have real constraints to reason from instead of guessing in a vacuum.
+
+## Phase 11: Hi-fi execution, then a domain-authenticity audit
 
 Build the screens carrying every decision forward, then stop and audit them against the real domain before calling them done. Two parts:
 
-1. **Keep the thread.** Every field, column, label, and interaction on a screen should trace to an assumption, a reference, or a priority. If you can't say why a thing is there, it's either scope creep or a gap.
+1. **Keep the thread.** Every field, column, label, and interaction on a screen should trace to a requirement ID from Phase 9, and through it to an assumption, a reference, or a priority. If you can't name the requirement, it's either scope creep or a gap in the PRD.
 2. **Audit for domain authenticity (the highest-leverage check).** The terms and units you reach for by default are usually the *consumer* version of the product. For a specialized audience (institutional finance, clinical, legal, logistics), that reads as amateur even when the layout is clean. After the first hi-fi pass, run a critical audit per area, grounded in real domain-authoritative sources (professional platforms and standards, not consumer apps): does a real professional call it this? Is this the unit they actually use? Is this field a real input, or decorative metadata? Reverse the ones that are wrong and mark them superseded (see "Reopening decisions").
 
 Watch for these recurring "reads retail" tells, all real findings from practice: a label from the retail/margin version of an instrument; a unit that only exists in the consumer product; a decorative status badge that isn't a calculation input; a headline that leads with the wrong number for the user's actual job (e.g. leading a risk/ops view with performance P&L instead of exposure). Also cut fields that look "complete" but don't serve the core job, an identifier or metric that only matters on a screen you aren't designing is clutter, not thoroughness.
 
-## Phase 11: The deliverable deck, cohesive and answerable
+## Phase 12: The deliverable deck, cohesive and answerable
 
 The deck is graded too. Treat it as a design artifact, not a writeup.
 
@@ -106,12 +162,13 @@ The deck is graded too. Treat it as a design artifact, not a writeup.
   - Present a formula as a shared **spine + per-case additions**, not one deceptively simple line. It's more honest and shows domain depth (a single "(mark − cost) × qty" invites "is it really that simple?", the answer is the layered version).
   - Turn a self-congratulatory "here is our rigor" slide into a concrete **contrast** (the easy/default way → what we built → why it matters). Judgment shown beats judgment claimed. Pair it with the business goal and 3 success metrics so the close carries an outcome, not a boast.
   - Personas earn their slide with a real **pain point + a concrete mini-spec** (the specific facts that make the two designs differ), not adjectives.
-  - Put the **method on the flow slide** (how the flow was derived: HMW → affinity → prioritization) with a link to the board, so the process is visible, not merely asserted.
-- **Coverage check**: keep an explicit requirement→slide table so every graded requirement in the brief maps to at least one slide, and no slide is off-brief.
+  - Put the **method on the flow slide** (how the flow was derived: HMW → affinity → prioritization → PRD) with a link to the board, so the process is visible, not merely asserted.
+  - Show **one real requirement block** rather than describing that a PRD exists. A single FR block with its trace, acceptance criteria, and dropped alternative proves the rigor in one glance, where a sentence claiming "we wrote requirements" proves nothing.
+- **Coverage check**: keep an explicit requirement→slide table so every graded requirement in the brief maps to at least one slide, and no slide is off-brief. Once Phase 9 exists this table is nearly free, the requirement IDs are already written and already traced, so the check becomes a join rather than a re-reading of the brief.
 
 ## Reopening decisions
 
-Treat every "resolved" decision as resolved-until-new-information, not permanent. When something upstream changes (a corrected platform, a persona detail that shifts a pain point, new research that contradicts an assumption), explicitly revisit anything downstream that was reasoned from the old version. Mark the old decision as superseded (with the reasoning for why) rather than silently overwriting it. Both the living doc and the FigJam board should show this history, it demonstrates the same rigor that made the original decision credible in the first place.
+Treat every "resolved" decision as resolved-until-new-information, not permanent. When something upstream changes (a corrected platform, a persona detail that shifts a pain point, new research that contradicts an assumption), explicitly revisit anything downstream that was reasoned from the old version. Mark the old decision as superseded (with the reasoning for why) rather than silently overwriting it. The living doc, the FigJam board, and the PRD's revision history should all show this history, it demonstrates the same rigor that made the original decision credible in the first place. A superseded requirement keeps its ID and gets marked superseded, it doesn't get deleted and it doesn't get its ID reused.
 
 A decision can also be reversed not by new information but by re-asking whether it serves the user's actual job. A field added for "consistency" or "completeness" can later be the right thing to remove once you ask whether the core task (here, a *view-only monitor* of positions the user already holds) needs it, versus a screen you're not designing (trade, discovery, settlement). Removing it is not backtracking, it's scope discipline, record the removal and the reasoning the same way you'd record an addition.
 
@@ -122,7 +179,8 @@ Build the board incrementally, matching the phases above, not all at once at the
 - **HMW**: grouped by theme, each individual HMW as its own sticky note so it can be prioritized/moved later. Add a color-coded priority badge (P0-P3) once Phase 5 is done, and always include a legend explaining what the colors mean, never assume the color mapping is self-evident.
 - **Personas**: goals as text, pain points as individual stickies (same reasoning as HMW, they're atomic items that may get referenced or grouped later).
 - **Success Metrics**: primary metrics visually distinguished (e.g. an accent bar or badge) from supporting metrics, matching the curation from Phase 8.
-- **Solution Concepts**: an affinity diagram, grouped by function (per Phase 6), stickies under category headers.
+- **Solution Concepts**: an affinity diagram, grouped by function (per Phase 6), stickies under category headers. Competing candidates for the same HMW sit side by side here, they don't get resolved until the PRD.
+- **PRD**: not a FigJam section. It lives as Figma document pages (680 × 992 max, 42 padding all sides, per Phase 9) plus the markdown living doc. Link the board section to the PRD file rather than duplicating requirements as stickies.
 - **UI Pattern References**: real screenshots (uploaded via the platform's asset upload, not invented mockups), grouped by pattern, each with a one-line caption naming the app and what it does. If webp screenshots fail to render as fills after upload, convert to PNG first, it's a more broadly-supported format for this purpose.
 
 Always re-screenshot a section after editing it to verify it actually rendered as intended before moving on, don't assume the write succeeded just because the tool call returned success.
