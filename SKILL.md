@@ -94,17 +94,18 @@ Scope the PRD by inherited priority. Every requirement carries the P-label of th
 
 ### Structure
 
-Follow standard PRD convention (purpose, scope, functional and non-functional requirements split apart, acceptance criteria, metrics) rather than inventing a format, but keep it design-led, not an engineering spec. Nine sections:
+Follow standard PRD convention (purpose, scope, functional and non-functional requirements split apart, acceptance criteria, metrics) rather than inventing a format, but keep it design-led, not an engineering spec. Ten sections:
 
 1. **Cover and revision history.** Title, version, date, author. The history matters here because of "Reopening decisions" below, a superseded requirement should be visible as superseded.
 2. **Purpose, in scope, out of scope.** The out-of-scope list does real work. It's where scope discipline gets written down instead of re-argued.
 3. **Assumptions.** Reference the Phase 1 numbers, don't restate them ("per assumption #4").
 4. **Users.** One line and one primary pain point per persona. Not the full Phase 4 persona.
 5. **Feature areas.** The body. Sections come from the Phase 6 affinity map, so they're grouped by function, which is what keeps a shared mechanism as a single entry instead of three drifting copies.
-6. **Non-functional requirements.** Refresh rates, performance, platform, accessibility. Split these out so they don't get buried inside a feature paragraph.
-7. **Success metrics.** The 3-5 primary ones from Phase 8 only.
-8. **Deferred.** The P2 and P3 items, with their labels.
-9. **Open questions.**
+6. **Key journeys.** Key journeys only, not the full flow. See below.
+7. **Non-functional requirements.** Refresh rates, performance, platform, accessibility. Split these out so they don't get buried inside a feature paragraph.
+8. **Success metrics.** The 3-5 primary ones from Phase 8 only.
+9. **Deferred.** The P2 and P3 items, with their labels.
+10. **Open questions.**
 
 ### The requirement block
 
@@ -134,13 +135,37 @@ Four things that earns you:
 
 State what the product must do, never how it's built. One mechanism answering three HMWs appears once with three trace links.
 
+### Key journeys, and the line between the PRD and the flow
+
+The order in which things must happen is a requirement, not a drawing decision, so don't leave the sequence to be invented at diagram time. But the PRD carries **key journeys only**, the happy path of each critical task as an ordered list of steps, each step naming the requirement IDs it satisfies:
+
+```
+J-01  Operator reviews overnight exposure       [P0]
+1. Opens position list          FR-POS-01, FR-POS-04
+2. Filters to one asset class   FR-POS-07
+3. Expands a position           FR-DET-02, FR-DET-03
+4. Exports the view             FR-EXP-01
+
+Not fixed here: what the list defaults to on open,
+what happens when the filter returns nothing.
+Resolved in Phase 10.
+```
+
+The "not fixed here" line is the important part. It makes the handoff explicit, so nobody has to guess whether an unspecified behavior was an oversight or a deliberate deferral.
+
+The line to hold: a required sequence is a *what*, so it belongs here. Branches, error paths, empty states, default states, and density decisions are *how*, and they are not honestly knowable without the Phase 7 references in hand, so specifying them in prose here means guessing, which is what this method exists to prevent. Leave them to Phase 10.
+
+This doesn't change how the PRD is organized. Feature areas stay grouped by function so a shared mechanism stays a single entry. Journeys reference requirement IDs in order, so one requirement can appear in several journeys without being duplicated anywhere.
+
 ### PRD pages in Figma
 
 Build the PRD as pages in Figma, not only as markdown, since it's a document stakeholders read alongside the board. Page frame is **680 × 992 maximum, with 42 padding on all four sides**, giving a 596-wide content column. Make the requirement block a real component with dynamic properties (ID, priority, statement, traces, acceptance, dropped) rather than copy-pasted text layers, so a change to the format propagates instead of being re-done per requirement. Priority label uses the same color mapping as the FigJam HMW badges, with the same legend.
 
 ## Phase 10: Only now, user flow
 
-With the PRD, references, and priorities in hand, sequence the requirements into an actual flow. This is the point where per-item interaction questions (default sort order, what updates when a filter changes, what's visible at each information density layer) get resolved, because by now you have real constraints to reason from instead of guessing in a vacuum.
+Don't invent the sequence here, the PRD's key journeys already fixed it. This phase expands those journeys into the actual flow: the branches, the error and empty paths, the default states, and every per-item interaction question the PRD explicitly left open (default sort order, what updates when a filter changes, what's visible at each information density layer). By now you have the references and the requirements to reason from instead of guessing in a vacuum.
+
+Work through every "not fixed here" line in the PRD and resolve it, then check nothing is left unanswered. Anything you resolve that contradicts a requirement is a signal to reopen that requirement, not to quietly design around it.
 
 ## Phase 11: Hi-fi execution, then a domain-authenticity audit
 
