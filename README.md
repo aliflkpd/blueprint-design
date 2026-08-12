@@ -21,8 +21,9 @@ When triggered, Claude will work through a design brief in phases instead of jum
 9. Curate success metrics to a few primary ones instead of an unfocused list
 10. Turn the solution concepts into a PRD, so requirements are written, prioritized, traced, and testable before any screen work starts, including the key journeys that fix what order things happen in
 11. Only then design the user flow, expanding those journeys into branches, error paths, and default states
-12. Build the hi-fi screens, then audit whether the terminology and units actually read like the real domain instead of a retail default
-13. Produce the final deliverable (a stakeholder deck or a case-study submission), cohesive with the product's own design language and traceable back to every requirement or validated decision
+12. Settle the design system first, by adopting the one the user already owns, building only what the flow needs, or recommending one with the tradeoff named
+13. Build the hi-fi screens, then audit whether the terminology and units actually read like the real domain instead of a retail default
+14. Present the deck as a product review for stakeholders rather than a case-study submission, cohesive with the product's own design language and traceable back to every requirement or validated decision
 
 It also sets a strict tool split (everything that is thinking lives in FigJam, only screens live in Figma), a two-stage naming convention (a boring working name at the start, the real product name once the PRD exists), and describes how to keep a living markdown decision document and a parallel FigJam board in sync throughout, and how to handle reopening a decision when new information (or a stakeholder) invalidates something already "resolved."
 

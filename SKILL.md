@@ -1,6 +1,6 @@
 ---
 name: blueprint-design
-description: Use whenever the user is designing a product or feature from zero and needs a systematic way to generate hypotheses, converge them into concrete prototypes, and validate which ones the business actually needs, not only for a case study or take-home assignment (though those still trigger it too, as a compressed instance of the same process). Trigger this any time the user shares a design brief, a case study document, a take-home design test, or asks to work through personas, HMW (How Might We) statements, problem framing, prioritization (P0-P3), success metrics, a PRD or product requirements document, functional and non-functional requirements, acceptance criteria, or a design decision log, even if they don't explicitly ask for a "process" or "methodology." Also use when the user wants to keep a living decision document alongside a FigJam board while designing, wants HMWs or pain points validated for gaps before moving to user flow, wants to generate multiple solution hypotheses before committing to one, wants solution concepts turned into written requirements before any screen work starts, needs to prep decisions or prototypes for a real stakeholder discussion and validation, or is deciding on UI interaction patterns and should ground the decision in real references (Mobbin, Lazyweb, WebSearch) instead of guessing from memory. Push toward this skill even for what looks like "just a quick brainstorm" on a design brief, since good product design is judged on process rigor and validated reasoning, not just final screens. Keep using it through hi-fi execution and the final presentation or stakeholder deck: auditing whether the UI's terminology reads like the real domain (institutional vs retail), reversing decisions that no longer serve the core job, and producing a cohesive, non-AI-slop deliverable that traces every slide back to a requirement or a validated decision.
+description: Use whenever the user is designing a product or feature from zero and needs a systematic way to generate hypotheses, converge them into concrete prototypes, and validate which ones the business actually needs, not only for a case study or take-home assignment (though those still trigger it too, as a compressed instance of the same process). Trigger this any time the user shares a design brief, a case study document, a take-home design test, or asks to work through personas, HMW (How Might We) statements, problem framing, prioritization (P0-P3), success metrics, a PRD or product requirements document, functional and non-functional requirements, acceptance criteria, or a design decision log, even if they don't explicitly ask for a "process" or "methodology." Also use when the user wants to keep a living decision document alongside a FigJam board while designing, wants HMWs or pain points validated for gaps before moving to user flow, wants to generate multiple solution hypotheses before committing to one, wants solution concepts turned into written requirements before any screen work starts, needs to settle a design system (adopt an existing one, build a new one, or get a recommendation) before hi-fi begins, needs to prep decisions or prototypes for a real stakeholder discussion and validation, or is deciding on UI interaction patterns and should ground the decision in real references (Mobbin, Lazyweb, WebSearch) instead of guessing from memory. Push toward this skill even for what looks like "just a quick brainstorm" on a design brief, since good product design is judged on process rigor and validated reasoning, not just final screens. Keep using it through hi-fi execution and the final presentation or stakeholder deck: auditing whether the UI's terminology reads like the real domain (institutional vs retail), reversing decisions that no longer serve the core job, and producing a cohesive, non-AI-slop deliverable that traces every slide back to a requirement or a validated decision.
 ---
 
 # Blueprint Design
@@ -9,7 +9,7 @@ A step-by-step method for designing a product from zero: generate hypotheses, co
 
 The core idea: **good product design is judged on the visible thinking, not just the final screens, whether the judge is a stakeholder deciding what to fund or a grader scoring an assignment.** Every phase below produces something that decision-maker can see evidence of: a documented assumption, a traceable HMW, a real reference, a resolved-with-reasoning decision, a hypothesis that survived (or didn't survive) scrutiny.
 
-A blueprint isn't the building. It's what makes the building sound enough to actually construct. This method covers the reasoning and documentation work (assumptions, research, HMW, personas, prioritization, solution concepts, references, flow) that generates and narrows down hypotheses before committing real design or engineering effort to one, but it exists to produce a solid foundation for the real design work that follows: the actual hi-fi screens and the deliverable used to align stakeholders (or satisfy a grading rubric). Don't treat Phase 9 (the PRD) or Phase 10 (user flow) as the finish line. The blueprint feeds two more phases that matter just as much: Phase 11 (hi-fi execution, then a domain-authenticity audit) and Phase 12 (the deliverable, whether that's a stakeholder deck or a case-study submission). Carry the same traceability all the way through, every screen and every slide should still be answerable with "because of X assumption / Y reference / Z priority / this is what stakeholders validated," not just "it looked right."
+A blueprint isn't the building. It's what makes the building sound enough to actually construct. This method covers the reasoning and documentation work (assumptions, research, HMW, personas, prioritization, solution concepts, references, flow) that generates and narrows down hypotheses before committing real design or engineering effort to one, but it exists to produce a solid foundation for the real design work that follows: the actual hi-fi screens and the deliverable used to align stakeholders (or satisfy a grading rubric). Don't treat Phase 9 (the PRD) or Phase 10 (user flow) as the finish line. The blueprint feeds three more phases that matter just as much: Phase 11 (settling the design system), Phase 12 (hi-fi execution, then a domain-authenticity audit) and Phase 13 (the deck, presented to stakeholders). Carry the same traceability all the way through, every screen and every slide should still be answerable with "because of X assumption / Y reference / Z priority / this is what stakeholders validated," not just "it looked right."
 
 Do not skip to screens before the earlier phases are done. Every phase here exists because skipping it caused a real problem in practice (see the "why" under each one).
 
@@ -26,7 +26,7 @@ Keep them in sync. When a decision changes (see "Reopening decisions" below), up
 
 **Everything that is thinking lives in FigJam. Only screens live in Figma.**
 
-FigJam holds the foundations, the problems, HMWs, personas, metrics, solution concepts, references, the PRD, and the user flow. Figma Design holds the hi-fi screens and nothing else, plus a small component kit file if you need one (see Phase 9). Figma Slides holds the deck.
+FigJam holds the foundations, the problems, HMWs, personas, metrics, solution concepts, references, the PRD, and the user flow. Figma Design holds the design system and the hi-fi screens, plus a small component kit file if you need one (see Phase 9), and nothing else. Figma Slides holds the deck.
 
 The reason is that the board is the process artifact. Someone should be able to open one file and see the entire chain of reasoning without hunting across tools, and the design file should stay clean enough that "here are the screens" means exactly that.
 
@@ -35,18 +35,18 @@ The reason is that the board is the process artifact. Someone should be able to 
 Name things twice, not once, because you need a filename long before you know what the product is.
 
 1. **Working name, at Phase 1.** Deliberately boring and descriptive, domain plus function ("Multi Asset Position Monitor"). Nobody gets attached to it, which is the point. Use it in every filename immediately so nothing is ever left as "Untitled".
-2. **Real product name, right after Phase 9.** The PRD is the first point where you actually know who uses this, what job it does, and what's out of scope, so before that you'd be naming a hypothesis. Do it *before* Phase 11, because the name appears in headers, empty states, and exports, and retrofitting it into finished screens is pure rework. Record the rename as a superseded decision like any other, then do it in one pass across every file.
+2. **Real product name, right after Phase 9.** The PRD is the first point where you actually know who uses this, what job it does, and what's out of scope, so before that you'd be naming a hypothesis. Do it *before* Phase 12, because the name appears in headers, empty states, and exports, and retrofitting it into finished screens is pure rework. Record the rename as a superseded decision like any other, then do it in one pass across every file.
 
 File naming uses numbered prefixes so files and pages sort in process order rather than alphabetically, and the deck is named for its audience rather than generically:
 
 | Artifact | Name |
 |---|---|
 | FigJam | `<Product> 01 Discovery` |
-| Figma Design | `<Product> 02 Screens` |
+| Figma Design | `<Product> 02 Screens` (holds the design system and the screens) |
 | Figma Slides | `<Product> 03 Stakeholder Deck`, or `03 Case Study` when the audience is a grader |
 | Living doc | `<product>.md`, kebab-case |
 
-Same logic inside each file. FigJam sections run `01 Problems`, `02 HMW`, `03 Personas`, `04 Metrics`, `05 Solution Concepts`, `06 References`, `07 PRD`, `08 User Flow`. Figma pages run `01 Screens`, `02 Exports`.
+Same logic inside each file. FigJam sections run `01 Problems`, `02 HMW`, `03 Personas`, `04 Metrics`, `05 Solution Concepts`, `06 References`, `07 PRD`, `08 User Flow`. Figma pages run `01 Foundations`, `02 Components`, `03 Screens`, `04 Exports`.
 
 ## Phase 0: Understand the brief, in the user's terms
 
@@ -155,7 +155,7 @@ Considered and dropped: separate exposure tab
 Four things that earns you:
 
 1. **Priority inherited**, so the build order and the scope cut line are readable without reorganizing anything.
-2. **Two-way traceability**, so the Phase 11 audit question "why is this field here" becomes a lookup instead of an argument.
+2. **Two-way traceability**, so the Phase 12 audit question "why is this field here" becomes a lookup instead of an argument.
 3. **Given/When/Then acceptance criteria**, which is what separates a requirement from a wish. If you can't write the criteria, the requirement isn't specific enough yet.
 4. **Considered and dropped**, so the divergent work from Phase 6 stays visible after you pick a winner instead of evaporating.
 
@@ -195,7 +195,19 @@ Don't invent the sequence here, the PRD's key journeys already fixed it. This ph
 
 Work through every "not fixed here" line in the PRD and resolve it, then check nothing is left unanswered. Anything you resolve that contradicts a requirement is a signal to reopen that requirement, not to quietly design around it.
 
-## Phase 11: Hi-fi execution, then a domain-authenticity audit
+## Phase 11: Settle the design system before drawing a single screen
+
+The flow tells you what screens exist. It doesn't tell you what they're made of. Starting hi-fi without a settled system means inventing spacing, type, and color decisions one screen at a time, and by screen six they contradict screen one. Settle it once, in one place.
+
+This phase is a question first, not a task. Ask the user which of three situations they're in, and don't assume:
+
+1. **They already own a system.** Then don't build anything. Read it, inventory what exists (components, variants, tokens, naming conventions), and identify the gaps between what the flow needs and what the library has. Those gaps are the only new components you're allowed to make. Follow their existing naming and token structure rather than importing your own.
+2. **They want a new one.** Build the foundations only, and only what the flow actually needs: type scale, spacing scale, color tokens including semantic ones, grid and breakpoints, then the components the flow calls for. Nothing speculative. A component nobody's flow uses is dead weight you'll maintain forever.
+3. **They want a recommendation.** Then suggest one, but ground it the way Phase 7 grounds interaction patterns, in what real products in this domain use, not in what's fashionable. Name the tradeoff (an off-the-shelf system is faster and looks generic, a bespoke one is slower and carries the domain's character) and let them choose. If the deliverable's job is to look like a real product in a specialized field, a recognizable off-the-shelf look works against that.
+
+Either way, before moving on: the system lives in the Figma Design file (it's construction, not thinking, so it does not go on the board), the tokens have semantic names rather than literal ones, and every component the flow needs exists. Record which of the three paths was taken and why in the living doc, because it explains a lot about how the screens look later.
+
+## Phase 12: Hi-fi execution, then a domain-authenticity audit
 
 Build the screens carrying every decision forward, then stop and audit them against the real domain before calling them done. Two parts:
 
@@ -204,9 +216,19 @@ Build the screens carrying every decision forward, then stop and audit them agai
 
 Watch for these recurring "reads retail" tells, all real findings from practice: a label from the retail/margin version of an instrument; a unit that only exists in the consumer product; a decorative status badge that isn't a calculation input; a headline that leads with the wrong number for the user's actual job (e.g. leading a risk/ops view with performance P&L instead of exposure). Also cut fields that look "complete" but don't serve the core job, an identifier or metric that only matters on a screen you aren't designing is clutter, not thoroughness.
 
-## Phase 12: The deliverable deck, cohesive and answerable
+## Phase 13: The deck, presented to stakeholders
 
-The deck is graded too. Treat it as a design artifact, not a writeup.
+Only now, with the screens finished, build the deck. It draws on everything upstream: the assumptions, the problems, the HMWs, the priorities, the requirements, the journeys, the flow, the system, the screens, and what you learned making them.
+
+**Present it as a product review for stakeholders, not as a case study submission.** This is the single biggest framing lever, and it holds even when the actual audience is a grader, because a grader is evaluating whether you can talk to a business. The difference in practice:
+
+1. Lead with the business problem and what it costs, not with "the brief asked me to."
+2. Say "we decided" and "this is what we're shipping," not "I was asked to explore."
+3. No slide narrating your process for its own sake. Method appears only where it justifies a decision someone might push back on.
+4. Close on outcome and what you need from the room, not on a thank-you slide.
+5. Never reference the assignment, the rubric, the time limit, or the word "case study" anywhere in the deck.
+
+Treat it as a design artifact, not a writeup.
 
 - **Medium**: pick a tool the user can edit and export cleanly (a native slides/design tool). If a first attempt can't export reliably or isn't customisable (e.g. a one-off HTML artifact that looks good but won't produce a clean PDF), switch mediums rather than patching, don't ship something the user can't own.
 - **Cohesion with the product**: reuse the product's own typography and color in the deck so the two read as one system. Prefer a light, editorial treatment with restraint; a dark-neon "techy" look tends to read as AI-generated. Place real exported screens (kept in sync with the design), not redrawn mockups, and re-export whenever a screen changes.
@@ -217,7 +239,7 @@ The deck is graded too. Treat it as a design artifact, not a writeup.
   - Personas earn their slide with a real **pain point + a concrete mini-spec** (the specific facts that make the two designs differ), not adjectives.
   - Put the **method on the flow slide** (how the flow was derived: HMW → affinity → prioritization → PRD) with a link to the board, so the process is visible, not merely asserted.
   - Show **one real requirement block** rather than describing that a PRD exists. A single FR block with its trace, acceptance criteria, and dropped alternative proves the rigor in one glance, where a sentence claiming "we wrote requirements" proves nothing.
-- **Coverage check**: keep an explicit requirement→slide table so every graded requirement in the brief maps to at least one slide, and no slide is off-brief. Once Phase 9 exists this table is nearly free, the requirement IDs are already written and already traced, so the check becomes a join rather than a re-reading of the brief.
+- **Coverage check**: keep an explicit requirement→slide table so every requirement in the brief maps to at least one slide, and no slide is off-brief. Once Phase 9 exists this table is nearly free, the requirement IDs are already written and already traced, so the check becomes a join rather than a re-reading of the brief.
 
 ## Reopening decisions
 
