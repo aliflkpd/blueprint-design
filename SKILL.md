@@ -1,6 +1,6 @@
 ---
 name: blueprint-design
-description: Use whenever the user is designing a product or feature from zero and needs a systematic way to generate hypotheses, converge them into concrete prototypes, and validate which ones the business actually needs, not only for a case study or take-home assignment (though those still trigger it too, as a compressed instance of the same process). Trigger this any time the user shares a design brief, a case study document, a take-home design test, or asks to work through personas, HMW (How Might We) statements, problem framing, prioritization (P0-P3), success metrics, a PRD or product requirements document, functional and non-functional requirements, acceptance criteria, or a design decision log, even if they don't explicitly ask for a "process" or "methodology." Also use when the user wants to keep a living decision document alongside a FigJam board while designing, wants HMWs or pain points validated for gaps before moving to user flow, wants to generate multiple solution hypotheses before committing to one, wants solution concepts turned into written requirements before any screen work starts, needs to settle a design system (adopt an existing one, build a new one, or get a recommendation) before hi-fi begins, needs to prep decisions or prototypes for a real stakeholder discussion and validation, or is deciding on UI interaction patterns and should ground the decision in real references (Mobbin, Lazyweb, WebSearch) instead of guessing from memory. Push toward this skill even for what looks like "just a quick brainstorm" on a design brief, since good product design is judged on process rigor and validated reasoning, not just final screens. Keep using it through hi-fi execution and the final presentation or stakeholder deck: auditing whether the UI's terminology reads like the real domain (institutional vs retail), reversing decisions that no longer serve the core job, and producing a cohesive, non-AI-slop deliverable that traces every slide back to a requirement or a validated decision.
+description: Use whenever the user is designing a product or feature from zero and needs a systematic way to generate hypotheses, converge them into concrete prototypes, and validate which ones the business actually needs, not only for a case study or take-home assignment (though those still trigger it too, as a compressed instance of the same process). Trigger this any time the user shares a design brief, a case study document, a take-home design test, or asks to work through personas, HMW (How Might We) statements, problem framing, prioritization (P0-P3), success metrics, a PRD or product requirements document, functional and non-functional requirements, acceptance criteria, or a design decision log, even if they don't explicitly ask for a "process" or "methodology." Also use when the user wants to keep a living decision document alongside a FigJam board while designing, wants HMWs or pain points validated for gaps before moving to user flow, wants to generate multiple solution hypotheses before committing to one, wants solution concepts turned into written requirements before any screen work starts, needs to settle a design system (adopt an existing one, build a new one, or get a recommendation) before hi-fi begins, needs to prep decisions or prototypes for a real stakeholder discussion and validation, or is deciding on UI interaction patterns and should ground the decision in real references (Mobbin flow and screen search, Lazyweb, WebSearch) instead of guessing from memory. Push toward this skill even for what looks like "just a quick brainstorm" on a design brief, since good product design is judged on process rigor and validated reasoning, not just final screens. Keep using it through hi-fi execution and the final presentation or stakeholder deck: auditing whether the UI's terminology reads like the real domain (institutional vs retail), reversing decisions that no longer serve the core job, and producing a cohesive, non-AI-slop deliverable that traces every slide back to a requirement or a validated decision.
 ---
 
 # Blueprint Design
@@ -9,7 +9,7 @@ A step-by-step method for designing a product from zero: generate hypotheses, co
 
 The core idea: **good product design is judged on the visible thinking, not just the final screens, whether the judge is a stakeholder deciding what to fund or a grader scoring an assignment.** Every phase below produces something that decision-maker can see evidence of: a documented assumption, a traceable HMW, a real reference, a resolved-with-reasoning decision, a hypothesis that survived (or didn't survive) scrutiny.
 
-A blueprint isn't the building. It's what makes the building sound enough to actually construct. This method covers the reasoning and documentation work (assumptions, research, HMW, personas, prioritization, solution concepts, references, flow) that generates and narrows down hypotheses before committing real design or engineering effort to one, but it exists to produce a solid foundation for the real design work that follows: the actual hi-fi screens and the deliverable used to align stakeholders (or satisfy a grading rubric). Don't treat Phase 9 (the PRD) or Phase 10 (user flow) as the finish line. The blueprint feeds three more phases that matter just as much: Phase 11 (settling the design system), Phase 12 (hi-fi execution, then a domain-authenticity audit) and Phase 13 (the deck, presented to stakeholders). Carry the same traceability all the way through, every screen and every slide should still be answerable with "because of X assumption / Y reference / Z priority / this is what stakeholders validated," not just "it looked right."
+A blueprint isn't the building. It's what makes the building sound enough to actually construct. This method covers the reasoning and documentation work (assumptions, research, HMW, personas, prioritization, solution concepts, references, flow) that generates and narrows down hypotheses before committing real design or engineering effort to one, but it exists to produce a solid foundation for the real design work that follows: the actual hi-fi screens and the deliverable used to align stakeholders (or satisfy a grading rubric). Don't treat Phase 9 (the PRD) or Phase 11 (user flow) as the finish line. The blueprint feeds three more phases that matter just as much: Phase 12 (settling the design system), Phase 13 (hi-fi execution, then a domain-authenticity audit) and Phase 14 (the deck, presented to stakeholders). Carry the same traceability all the way through, every screen and every slide should still be answerable with "because of X assumption / Y reference / Z priority / this is what stakeholders validated," not just "it looked right."
 
 Do not skip to screens before the earlier phases are done. Every phase here exists because skipping it caused a real problem in practice (see the "why" under each one).
 
@@ -35,7 +35,7 @@ The reason is that the board is the process artifact. Someone should be able to 
 Name things twice, not once, because you need a filename long before you know what the product is.
 
 1. **Working name, at Phase 1.** Deliberately boring and descriptive, domain plus function ("Multi Asset Position Monitor"). Nobody gets attached to it, which is the point. Use it in every filename immediately so nothing is ever left as "Untitled".
-2. **Real product name, right after Phase 9.** The PRD is the first point where you actually know who uses this, what job it does, and what's out of scope, so before that you'd be naming a hypothesis. Do it *before* Phase 12, because the name appears in headers, empty states, and exports, and retrofitting it into finished screens is pure rework. Record the rename as a superseded decision like any other, then do it in one pass across every file.
+2. **Real product name, right after Phase 9.** The PRD is the first point where you actually know who uses this, what job it does, and what's out of scope, so before that you'd be naming a hypothesis. Do it *before* Phase 13, because the name appears in headers, empty states, and exports, and retrofitting it into finished screens is pure rework. Record the rename as a superseded decision like any other, then do it in one pass across every file.
 
 File naming uses numbered prefixes so files and pages sort in process order rather than alphabetically, and the deck is named for its audience rather than generically:
 
@@ -102,9 +102,23 @@ Watch for one mechanism answering multiple HMWs (e.g. one "expandable detail" co
 
 Generate more than one candidate mechanism per HMW where the space allows it. Don't narrow here, the narrowing happens in Phase 9 where writing the requirement forces the choice and records the rejects. This phase's job is to have options worth choosing between.
 
-## Phase 7: Ground interaction/pattern decisions in real references, not memory
+## Phase 7: First reference scan, flows then screens
 
-When deciding how something should look or behave (an interaction pattern, a layout convention, a data density approach), pull real screenshots from actual products before deciding, rather than reasoning from memory about "how apps usually do this." Use Mobbin (search by platform: ios/web to match your confirmed platform from Phase 2) and Lazyweb for visual references, WebSearch for written best-practice research. Real examples surface options you wouldn't have generated yourself, and they let you cite something concrete when explaining the decision later.
+Never decide how something should look or behave from memory. Pull real references from actual products first. Real examples surface options you wouldn't have generated yourself, and they let you cite something concrete when explaining the decision later.
+
+References happen in **two scans at two different times**, because they answer two different kinds of question. This is the first.
+
+**Phases 6 and 7 run as a loop, not a sequence.** A reference surfaces a mechanism you hadn't considered, which sends you back to the affinity map, which raises a new question to search. Expect to go around two or three times before it settles.
+
+Scan in this order, it matters:
+
+1. **Flows first** (`search_flows` on Mobbin, matched to the platform confirmed in Phase 2). A flow gives you the sequence: what comes before a screen, what comes after, and what state things are in along the way. This is what grounds the key journeys you're about to write into the PRD, so the sequence is researched rather than invented at document-writing time.
+2. **Then screens** (`search_screens`). With the sequence in hand you can zoom into individual pages inside it. Do this second, because a page reference read without knowing what precedes or follows it tells you very little.
+3. **Lazyweb and WebSearch** alongside both, for visual references outside Mobbin's coverage and for written best-practice research.
+
+Anchoring is the risk to watch here, finding a pattern you like and quietly reverse-engineering requirements to justify it. The defense is that this scan's output is *candidates*, not decisions. You're widening the option set, not committing. The committing happens in the PRD.
+
+This scan is heavier than it looks: flow references for every P0 journey, plus screen references for the mechanisms. That's deliberate. It's work you'd otherwise do twice, badly, once here against a vague question and again later when the flow expansion needs references that have gone stale.
 
 If the platform assumption from Phase 2 turns out to be wrong or incomplete partway through, don't just swap the decision, re-gather references for the corrected platform. Patterns that make sense on mobile (accordions to save vertical space, full-page navigation) often aren't the best answer on desktop (where split-view / master-detail panels become viable), and vice versa. Keep the old research in the living doc marked as parked, not deleted, in case it's useful later (e.g. a future mobile version).
 
@@ -155,7 +169,7 @@ Considered and dropped: separate exposure tab
 Four things that earns you:
 
 1. **Priority inherited**, so the build order and the scope cut line are readable without reorganizing anything.
-2. **Two-way traceability**, so the Phase 12 audit question "why is this field here" becomes a lookup instead of an argument.
+2. **Two-way traceability**, so the Phase 13 audit question "why is this field here" becomes a lookup instead of an argument.
 3. **Given/When/Then acceptance criteria**, which is what separates a requirement from a wish. If you can't write the criteria, the requirement isn't specific enough yet.
 4. **Considered and dropped**, so the divergent work from Phase 6 stays visible after you pick a winner instead of evaporating.
 
@@ -174,12 +188,12 @@ J-01  Operator reviews overnight exposure       [P0]
 
 Not fixed here: what the list defaults to on open,
 what happens when the filter returns nothing.
-Resolved in Phase 10.
+Resolved in Phase 11.
 ```
 
 The "not fixed here" line is the important part. It makes the handoff explicit, so nobody has to guess whether an unspecified behavior was an oversight or a deliberate deferral.
 
-The line to hold: a required sequence is a *what*, so it belongs here. Branches, error paths, empty states, default states, and density decisions are *how*, and they are not honestly knowable without the Phase 7 references in hand, so specifying them in prose here means guessing, which is what this method exists to prevent. Leave them to Phase 10.
+The line to hold: a required sequence is a *what*, so it belongs here, and the flow references from Phase 7's first scan are what ground it. Branches, error paths, empty states, default states, and density decisions are *how*, and they need references you don't have yet, so specifying them in prose here means guessing, which is what this method exists to prevent. Leave them to Phase 11.
 
 This doesn't change how the PRD is organized. Feature areas stay grouped by function so a shared mechanism stays a single entry. Journeys reference requirement IDs in order, so one requirement can appear in several journeys without being duplicated anywhere.
 
@@ -189,13 +203,23 @@ The PRD belongs in FigJam with the rest of the thinking, not in the Figma design
 
 Make the requirement block a real component with dynamic properties (ID, priority, statement, traces, acceptance, dropped) rather than copy-pasted text layers, so a format change propagates instead of being redone per requirement. FigJam can't create components, only Figma Design can, so author the block once in a small kit file, publish it as a library, and consume it in FigJam where you can switch its variants. If per-instance text overrides turn out to be awkward in FigJam, fall back to one master template group you duplicate, and keep it as the single source of truth so the format still only changes in one place. Priority label uses the same color mapping as the HMW badges, with the same legend.
 
-## Phase 10: Only now, user flow
+## Phase 10: Second reference scan, pages only
+
+The PRD is now your base, and it already fixed the sequence. So this scan doesn't repeat the flow research, it goes narrow: page-level references for the individual requirements, using `search_screens` (and `search_sections` if any of the deliverable is a web marketing surface).
+
+The question changes shape between the two scans. Scan one asked "how do products in this space handle this class of problem." Scan two asks "FR-POS-07 needs a filter pattern for a monitoring view, what do real tools in this domain actually do." Narrow, per-requirement, and answerable, because the requirement already told you what the thing has to accomplish.
+
+Work requirement by requirement through the P0s and P1s rather than by feature area, and note which requirement each reference supports so the citation survives into the deck.
+
+## Phase 11: Only now, user flow
 
 Don't invent the sequence here, the PRD's key journeys already fixed it. This phase expands those journeys into the actual flow: the branches, the error and empty paths, the default states, and every per-item interaction question the PRD explicitly left open (default sort order, what updates when a filter changes, what's visible at each information density layer). By now you have the references and the requirements to reason from instead of guessing in a vacuum.
 
 Work through every "not fixed here" line in the PRD and resolve it, then check nothing is left unanswered. Anything you resolve that contradicts a requirement is a signal to reopen that requirement, not to quietly design around it.
 
-## Phase 11: Settle the design system before drawing a single screen
+**Narrow flow lookups are allowed here, and only here.** The deferred items are sequence questions, and a page reference can't answer them: it can show you that an empty state exists, but not what triggered it, what the screen looked like immediately before, or where the user lands after. So pull specific flows (`search_flows`) for the branches, error paths, and empty states you're resolving. Keep it targeted to those, this is not a third full scan.
+
+## Phase 12: Settle the design system before drawing a single screen
 
 The flow tells you what screens exist. It doesn't tell you what they're made of. Starting hi-fi without a settled system means inventing spacing, type, and color decisions one screen at a time, and by screen six they contradict screen one. Settle it once, in one place.
 
@@ -203,11 +227,11 @@ This phase is a question first, not a task. Ask the user which of three situatio
 
 1. **They already own a system.** Then don't build anything. Read it, inventory what exists (components, variants, tokens, naming conventions), and identify the gaps between what the flow needs and what the library has. Those gaps are the only new components you're allowed to make. Follow their existing naming and token structure rather than importing your own.
 2. **They want a new one.** Build the foundations only, and only what the flow actually needs: type scale, spacing scale, color tokens including semantic ones, grid and breakpoints, then the components the flow calls for. Nothing speculative. A component nobody's flow uses is dead weight you'll maintain forever.
-3. **They want a recommendation.** Then suggest one, but ground it the way Phase 7 grounds interaction patterns, in what real products in this domain use, not in what's fashionable. Name the tradeoff (an off-the-shelf system is faster and looks generic, a bespoke one is slower and carries the domain's character) and let them choose. If the deliverable's job is to look like a real product in a specialized field, a recognizable off-the-shelf look works against that.
+3. **They want a recommendation.** Then suggest one, but ground it the way the reference scans ground interaction patterns, in what real products in this domain use, not in what's fashionable. Name the tradeoff (an off-the-shelf system is faster and looks generic, a bespoke one is slower and carries the domain's character) and let them choose. If the deliverable's job is to look like a real product in a specialized field, a recognizable off-the-shelf look works against that.
 
 Either way, before moving on: the system lives in the Figma Design file (it's construction, not thinking, so it does not go on the board), the tokens have semantic names rather than literal ones, and every component the flow needs exists. Record which of the three paths was taken and why in the living doc, because it explains a lot about how the screens look later.
 
-## Phase 12: Hi-fi execution, then a domain-authenticity audit
+## Phase 13: Hi-fi execution, then a domain-authenticity audit
 
 Build the screens carrying every decision forward, then stop and audit them against the real domain before calling them done. Two parts:
 
@@ -216,7 +240,7 @@ Build the screens carrying every decision forward, then stop and audit them agai
 
 Watch for these recurring "reads retail" tells, all real findings from practice: a label from the retail/margin version of an instrument; a unit that only exists in the consumer product; a decorative status badge that isn't a calculation input; a headline that leads with the wrong number for the user's actual job (e.g. leading a risk/ops view with performance P&L instead of exposure). Also cut fields that look "complete" but don't serve the core job, an identifier or metric that only matters on a screen you aren't designing is clutter, not thoroughness.
 
-## Phase 13: The deck, presented to stakeholders
+## Phase 14: The deck, presented to stakeholders
 
 Only now, with the screens finished, build the deck. It draws on everything upstream: the assumptions, the problems, the HMWs, the priorities, the requirements, the journeys, the flow, the system, the screens, and what you learned making them.
 
@@ -256,8 +280,8 @@ Build the board incrementally, matching the phases above, not all at once at the
 - **Success Metrics**: primary metrics visually distinguished (e.g. an accent bar or badge) from supporting metrics, matching the curation from Phase 8.
 - **Solution Concepts**: an affinity diagram, grouped by function (per Phase 6), stickies under category headers. Competing candidates for the same HMW sit side by side here, they don't get resolved until the PRD.
 - **PRD**: document pages, 680 × 992 max with 42 padding all sides (per Phase 9), requirement blocks as library component instances rather than loose text. Not stickies, it's a specification, not discussion input.
-- **User Flow**: the expanded flow from Phase 10, built off the PRD's key journeys, with branches and error paths drawn rather than described.
-- **UI Pattern References**: real screenshots (uploaded via the platform's asset upload, not invented mockups), grouped by pattern, each with a one-line caption naming the app and what it does. If webp screenshots fail to render as fills after upload, convert to PNG first, it's a more broadly-supported format for this purpose.
+- **User Flow**: the expanded flow from Phase 11, built off the PRD's key journeys, with branches and error paths drawn rather than described.
+- **UI Pattern References**: real screenshots (uploaded via the platform's asset upload, not invented mockups), grouped by pattern, each with a one-line caption naming the app and what it does. Keep the two scans as separate sub-groups, flow references from Phase 7 and page references from Phase 10, since they were gathered against different questions and mixing them loses that. If webp screenshots fail to render as fills after upload, convert to PNG first, it's a more broadly-supported format for this purpose.
 
 Always re-screenshot a section after editing it to verify it actually rendered as intended before moving on, don't assume the write succeeded just because the tool call returned success.
 
